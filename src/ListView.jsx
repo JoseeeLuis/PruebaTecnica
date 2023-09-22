@@ -1,5 +1,5 @@
 import { data } from "./data";
-import { FilterPerson } from "./assets/components/FilterPerson";
+import { FilterPerson } from "./components/FilterPerson";
 import "./ListView.css";
 
 function ListView({ filterProperty }) {
@@ -21,7 +21,7 @@ function ListView({ filterProperty }) {
       {filterValues.map((title) => (
         <div className={`${title} container`} key={title}>
           <h3 className="rols-titles">{title}</h3>
-          <FilterPerson rol={title} />
+          <FilterPerson property={filterProperty} value={title} />
         </div>
       ))}
     </div>

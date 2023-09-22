@@ -1,9 +1,9 @@
-import { data } from "../../data";
+import { data } from "../data";
 import { PrintPerson } from "./PrintPerson";
 
-function FilterPerson({ rol }) {
+function FilterPerson({ property, value }) {
   const userComponents = data
-    .filter((person) => person.roles.includes(rol))
+    .filter((person) => person[property] && person[property].includes(value))
     .map((person, index) => <PrintPerson key={index} person={person} />);
   console.log(userComponents);
 
